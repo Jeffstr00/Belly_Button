@@ -4,9 +4,9 @@ Webpage: [https://jeffstr00.github.io/Belly_Button/](https://jeffstr00.github.io
 
 ## Overview
 
-Does thinking about belly buttons and bacteria make you hungry?  Great!  The Improbable Beef compnay is looking for bacteria species that have the ability to synthesize proteins which taste like beef.  So far, labs have been able to synthesize meat from algea, fungi, and plant root microorganisms.  However, so far, those results have left tasters asking, "Where's the beef (flavor)?"  Improbably Beef is hoping that crazy amounts of lint won't be the only thing found in belly buttons; they believe that the elusive beef-flavored bacterial species may be residing in there as well.
+Does thinking about belly buttons and bacteria make you hungry?  Great!  The Improbable Beef company is looking for bacteria species that have the ability to synthesize proteins which taste like beef.  So far, labs have been able to synthesize meat from algea, fungi, and plant root microorganisms.  However, so far, those results have left tasters asking, "Where's the beef (flavor)?"  Improbable Beef is hoping that crazy amounts of lint won't be the only thing found in belly buttons; they believe that the elusive beef-flavored bacteria species may be residing in there as well.
 
-As a result, they have gone navel gazing across the world, checking nout belly buttons of countless volunteers to see if anyone happens to have beefy belly button bacteria.  In order to assist on their quest, we aim to create a website which takes information from those studies and displays it in various easy-to-read tables and charts.  When the user selects the Test Subject ID from the dropdown menu, they will be provided with a table full of demographic information, both a horizontal bar chart and a bubble chart showing what bacteria they have, and a gauge chart showing how often they (claim to) wash their belly button.
+As a result, they have gone navel gazing across the world, checking out belly buttons of countless volunteers to see if anyone happens to have beefy belly button bacteria.  In order to assist on their quest, we aim to create a website which takes information from those studies and displays it in various easy-to-read tables and charts.  When the user selects the Test Subject ID from the dropdown menu, they will be provided with a table full of demographic information, both a horizontal bar chart and a bubble chart showing what bacteria they have in their belly button, and a gauge chart showing how often they (claim to) wash their belly button.
 
 ## Creating Custom Table & Charts
 
@@ -14,8 +14,8 @@ As a result, they have gone navel gazing across the world, checking nout belly b
 
 ### Demographic Table
 
-After reading in the samples .json file, we grab its metadata using `var metadata = data.metadata`.  To select the metadata that goes with the selected sample number, we use `var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);`.  In order to create the dynamic table, we use .append() to add the information to the "sample-metadata" div in our index.html, like so: `Object.entries(result).forEach(([key, value]) => {
-      PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);`.
+After reading in the samples .json file, we grab its metadata using `var metadata = data.metadata`.  To select the metadata that goes with the selected sample number, we use `var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);`.  In order to create the dynamic table, we use .append() to add the information to the "sample-metadata" div in our index.html, like so: ```Object.entries(result).forEach(([key, value]) => {
+      PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);```.
 
 ### Top 10 Bacteria Cultures Horizontal Bar Chart
 
@@ -37,7 +37,7 @@ Since we already had the information we needed, creating the bubble chart was re
 
 ### Belly Button Washing Frequency Gauge Chart
 
-Once again, we read in the metadata from the json, filtered it so that the id matched that of our selected sample, but this time we grabbed the washing frequnecy (and converted it from a string to a floating-point number using parseFloat).  When setting up the gauge chart, we simply used wfreq as the value.  To standardize the chart's appearance, we set the gauge's axis range from 0 to 10 and its steps as `{range: [0,2], color: "red"}`, with each range having its own specified color.
+Once again, we read in the metadata from the json, filtered it so that the id matched that of our selected sample, but this time we grabbed the washing frequency (and converted it from a string to a floating-point number using parseFloat).  When setting up the gauge chart, we simply used wfreq as the value.  To standardize the chart's appearance, we set the gauge's axis range from 0 to 10 and its steps as `{range: [0,2], color: "red"}`, with each range having its own specified color.
 
 ## Enhancing Webpage
 
