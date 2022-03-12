@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body style="background-image: radial-gradient(black, #ad8c31, #f5c542);">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" style="background-color: #f5c542">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <h3>Use the interactive charts below to explore the dataset</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading" style="background-color: #382c0b">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <br><br>
+        <div id="bubble"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <br><br>
+        <div id="blurb">
+          <div><img src="resources/grittys-belly-button.jpg" alt="Gritty's belly button" class="center">
+          </div>
+          <div><br><h4 class="indent">Is all of this talk about belly buttons and bacteria making you hungry?  Great!  The Improbable Beef company is looking for 
+            bacterial species that have the ability to synthesize proteins which taste like beef.  So far, labs have been able to synthesize meat from algea, fungi, and plant root microorganisms.  
+            However, so far, those results have left tasters asking, "Where's the beef (flavor)?"  Improbable Beef is hoping that crazy amounts of lint won't be the only thing found in belly buuttons; they
+            believe that the elusive beef-flavored bacterial species may be hiding in there as well.</h4>
+            <h4 class="indent">As a result, they have gone navel gazing across the world, checking out belly buttons of countless volunteers to see if anyone happens to have beefy belly button bacteria.  In order 
+              to assist on their quest, this website takes information from those studies and displays it in various tables and charts.  When the user selects the Test Subject ID from the dropdown menu, a table below displays
+               demographic information including ethnicity, gender, age, location, etc.  It also shows three customized charts for the selected subject.  A standard horizontal bar chart shows their top 10 bacterial cultures, a 
+               bubble chart displays the same information (plus that of less common bacteria) in a more visual form, and a gauge chart shows how often they (claim to) wash their belly button.
+            </h4>
+          </h4></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="plots_5.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
